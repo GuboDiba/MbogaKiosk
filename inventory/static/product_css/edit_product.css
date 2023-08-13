@@ -1,0 +1,33 @@
+
+.product-table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: solid black;
+    margin-top: 2%;
+  }
+  .product-table th, .product-table td {
+    padding: 30px;
+    border: 2px solid #080918;
+    
+  }
+  .product-table th{
+    background-color: rgb(166, 166, 221);
+  }
+  .imagee{
+    width: 60px;
+    height: 60px;
+  }
+  .product-table a{
+    text-decoration: none;
+    color:rgb(27, 27, 146); ;
+  }
+  .product-table td a:hover {
+    text-decoration: underline;
+    color: green;
+    background-color: red;
+    padding: 3%;
+
+  }

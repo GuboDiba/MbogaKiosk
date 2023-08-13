@@ -1,29 +1,54 @@
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'product_css/edit_product.css' %}">
+
+ 
+ 
 </head>
 <body>
-    <table>
-        <th>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Product Details</td>
-    
-        </th>
-        {% for product in products %}
-        <tr>
-            <td> {{product.name}}</td>
-            <td> {{product.description}}</td>
-            <td> {{product.price}}</td>
-            <td><a href="{%url 'product_detail_view' id=product.id%}">view products</a></td>
-        </tr>
-        {%endfor%}
-
-
+    <table class="product-table">
+      
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Product Price</th>
+                <th>Product Details</th>
+                <th>Edit Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }} Image" class="imagee">
+                {% endif %}        
+                </td>
+                <td >{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a href="{% url 'product_detail_view' id=product.id %}">View details</a>
+                </td>
+                <td>
+                    <a href="{% url 'products_edit_view' id=product.id %}">Edit product</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>
+
+
+

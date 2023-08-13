@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'product_css/edit_product.css'%}">
+
+</head>
+<body>
+    <h3>Edit Product</h3>
+    <form method="post",class="upload-form" >
+        <!-- cross site request forgery.it protects the system from hackers -->
+        {%csrf_token%}  
+
+        {{form.as_p}}
+
+        <button type="Submit">Save</button>
+
+
+    </form>
+</body>
+</html>
